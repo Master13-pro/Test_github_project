@@ -1,0 +1,121 @@
+body {
+    display: flex;
+    flex-direction: column; /* Stack title and scene vertically */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgba(163, 205, 241, 0.795);
+    font-family: sans-serif;
+    margin: 0;
+}
+
+.titre {
+    text-align: center;
+    margin-bottom: 250px;
+}
+
+.scene {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    perspective: 1000px;
+    width: 100%;
+    margin-bottom: 100px;
+}
+
+.cube {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotate3d(1, 1, 0, 45deg);
+    transition: transform 1s;
+}
+
+.face1, .face2, .face3, .face4, .face5, .face6 {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-color: rgba(0, 123, 255, 0.7);
+    border: 1px solid #0056b3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: white;
+    font-weight: bold;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Front Face */
+.face1 {
+    transform: translateZ(100px);
+}
+
+/* Right Face */
+.face2 {
+    transform: rotateY(90deg) translateZ(100px);
+}
+
+/* Left Face */
+.face3 {
+    transform: rotateY(-90deg) translateZ(100px);
+}
+
+/* Top Face */
+.face4 {
+    transform: rotateX(90deg) translateZ(100px);
+}
+
+/* Bottom Face */
+.face5 {
+    transform: rotateX(-90deg) translateZ(100px);
+}
+/* Back Face */
+.face6 {
+    transform: rotateY(180deg) translateZ(100px);
+}
+/* Disassembly animation on hover */
+.cube:hover .face1 {
+    transform: translateZ(150px) rotateY(45deg);
+}
+
+.cube:hover .face2 {
+    transform: rotateY(90deg) translateZ(150px) rotateY(45deg);
+}
+
+.cube:hover .face3 {
+    transform: rotateY(-90deg) translateZ(150px) rotateY(45deg);
+}
+
+.cube:hover .face4 {
+    transform: rotateX(90deg) translateZ(150px) rotateY(45deg);
+}
+
+.cube:hover .face5 {
+    transform: rotateX(-90deg) translateZ(150px) rotateY(45deg);
+}
+
+.cube:hover .face6 {
+    transform: rotateY(180deg) translateZ(150px) rotateY(45deg);
+}
+
+.cube:hover {
+    transform: rotate3d(1, 1, 0, 90deg) scale(1.1);
+}
+
+/* Sphere styles */
+.sphere {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 65% 35%, white, #007bff);
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    transform-style: preserve-3d;
+    transition: transform 0.8s ease-in-out;
+}
+
+.sphere:hover {
+  transform: translateZ(100px) rotateY(360deg);
+}
