@@ -119,3 +119,21 @@ body {
 .sphere:hover {
   transform: translateZ(100px) rotateY(360deg);
 }
+@keyframes pulser {
+  0% {
+    transform: scale(1); /* Taille normale */
+  }
+  50% {
+    transform: scale(1.1); /* Un peu plus grand */
+  }
+  100% {
+    transform: scale(1); /* Retour à la normale */
+  }
+}   
+.titre h1 {
+  animation: pulser 3s ease-in-out infinite;
+}
+.titre p {
+  animation: pulser 5s ease infinite;
+}
+/* Animation de pulsation pour le titre */
